@@ -9,7 +9,7 @@ use Admin\Classes\Widgets;
  */
 class Extension extends BaseExtension
 {
-  
+   
     /**
      * Returns information about this extension.
      *
