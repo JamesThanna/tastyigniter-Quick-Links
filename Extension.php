@@ -34,7 +34,7 @@ class Extension extends BaseExtension
 
       Widgets::instance()->registerDashboardWidgets(function (Widgets $manager) {
           
-            $manager->registerDashboardWidget(Widgets::class, [
+            $manager->registerDashboardWidget(quicklinks::class, [
                 'label' => 'test activities',
                 'context' => 'dashboard',
             ]);
@@ -54,7 +54,7 @@ class Extension extends BaseExtension
      */
     public function register()
     {
-
+$this->registerDashboardWidgets();
     }
   
 
@@ -65,7 +65,7 @@ class Extension extends BaseExtension
      */
     public function boot()
     {
-$this->registerDashboardWidgets();
+
     }
 
     /**

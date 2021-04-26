@@ -17,7 +17,7 @@ class QuickLinks extends Widgets
     {
         $this->prepareVars();
 
-        return $this->partialPath('quicklinks\quicklinks');
+        return $this->partialPath('quicklinks');
     }
 
     public function defineProperties()
