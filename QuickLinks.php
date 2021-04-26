@@ -2,9 +2,9 @@
 
 namespace MiOrder\QuickLinks;
 
-use Admin\Classes\BaseDashboardWidget;
-
-class QuickLinks extends BaseDashboardWidget
+//use Admin\Classes\BaseDashboardWidget;
+use Admin\Classes\Widgets;
+class QuickLinks extends Widgets
   
 {
   
@@ -17,7 +17,7 @@ class QuickLinks extends BaseDashboardWidget
     {
         $this->prepareVars();
 
-        return $this->partialPath('quicklinks');
+        return $this->partialPath('quicklinks\quicklinks');
     }
 
     public function defineProperties()
@@ -33,8 +33,8 @@ class QuickLinks extends BaseDashboardWidget
 
     protected function prepareVars()
     {
-        $user = AdminAuth::getUser();
-
+ 
+  
     }
 
 }

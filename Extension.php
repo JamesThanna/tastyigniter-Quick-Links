@@ -1,7 +1,7 @@
 <?php namespace MiOrder\QuickLinks;
 
 use System\Classes\BaseExtension;
-use MiOrder\QuickLinks\QuickLinks;
+use MiOrder\QuickLinks;
 use Admin\Classes\Widgets;
 //use Admin\Classes\BaseDashboardWidget;
 /**
@@ -27,11 +27,19 @@ class Extension extends BaseExtension
     }
   
 
+  
   public function registerDashboardWidgets() {
+        
 
-    $myWidget = new QuickLinks($this);
-    $myWidget->alias = 'QuickLinks';
-    $myWidget->bindToController();
+
+      Widgets::instance()->registerDashboardWidgets(function (Widgets $manager) {
+          
+            $manager->registerDashboardWidget(Widgets::class, [
+                'label' => 'test activities',
+                'context' => 'dashboard',
+            ]);
+      });
+    
 }
      
 
@@ -57,7 +65,7 @@ class Extension extends BaseExtension
      */
     public function boot()
     {
-
+$this->registerDashboardWidgets();
     }
 
     /**
