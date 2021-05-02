@@ -29,18 +29,17 @@ class Extension extends BaseExtension
 
   
   public function registerDashboardWidgets() {
-        
 
-
-      Widgets::instance()->registerDashboardWidgets(function (Widgets $manager) {
-          
-            $manager->registerDashboardWidget(quicklinks::class, [
-                'label' => 'test activities',
+      return [
+          'MiOrder\QuickLinks\QuickLinks' => [
+                'label' => 'Quicklinks',
                 'context' => 'dashboard',
-            ]);
-      });
+            ],
+        
+        
+      ];
     
-}
+  }
      
 
     
@@ -54,7 +53,6 @@ class Extension extends BaseExtension
      */
     public function register()
     {
-$this->registerDashboardWidgets();
     }
   
 

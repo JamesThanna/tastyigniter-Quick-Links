@@ -2,10 +2,8 @@
 
 namespace MiOrder\QuickLinks;
 
-//use Admin\Classes\BaseDashboardWidget;
-use Admin\Classes\Widgets;
-class QuickLinks extends Widgets
-  
+use Admin\Classes\BaseDashboardWidget;
+class QuickLinks extends BaseDashboardWidget
 {
   
     /**
@@ -17,7 +15,7 @@ class QuickLinks extends Widgets
     {
         $this->prepareVars();
 
-        return $this->partialPath('quicklinks');
+        return $this->makePartial('partials/quicklinks');
     }
 
     public function defineProperties()
